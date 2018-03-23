@@ -64,6 +64,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         table.setEditing(editing, animated: animated)
         
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        let detailViewControll = segue.destination as! DetailViewController
+        selectedRow = table.indexPathForSelectedRow!.row
+        detailViewControll.masterView = self
+        detailViewControll.setText(t: data[selectedRow])
+    }
+    
     override func didReceiveMemoryWarning()
     {
         super.didReceiveMemoryWarning()
@@ -134,16 +143,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
-        print(data[indexPath.row])
         self.performSegue(withIdentifier: "detail", sender: nil)
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath)
     {
-        let detailViewControll = segue.destination as! DetailViewController
-        selectedRow = table.indexPathForSelectedRow!.row
-        detailViewControll.masterView = self
-        detailViewControll.setText(t: data[selectedRow])        
+        let movedItem = data[sourceIndexPath.row]
+        data.remove(at: sourceIndexPath.row)
+        data.insert(movedItem, at: destinationIndexPath.row)
+        table.reloadData()
     }
 
 }
