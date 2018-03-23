@@ -12,6 +12,7 @@
 		74A86BAF2065163200A83BF8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74A86BAD2065163200A83BF8 /* Main.storyboard */; };
 		74A86BB12065163200A83BF8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74A86BB02065163200A83BF8 /* Assets.xcassets */; };
 		74A86BB42065163200A83BF8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74A86BB22065163200A83BF8 /* LaunchScreen.storyboard */; };
+		74A86BBC206542E600A83BF8 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A86BBB206542E600A83BF8 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		74A86BB02065163200A83BF8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		74A86BB32065163200A83BF8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		74A86BB52065163200A83BF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		74A86BBB206542E600A83BF8 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			children = (
 				74A86BA92065163200A83BF8 /* AppDelegate.swift */,
 				74A86BAB2065163200A83BF8 /* ViewController.swift */,
+				74A86BBB206542E600A83BF8 /* DetailViewController.swift */,
 				74A86BAD2065163200A83BF8 /* Main.storyboard */,
 				74A86BB02065163200A83BF8 /* Assets.xcassets */,
 				74A86BB22065163200A83BF8 /* LaunchScreen.storyboard */,
@@ -136,6 +139,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74A86BBC206542E600A83BF8 /* DetailViewController.swift in Sources */,
 				74A86BAC2065163200A83BF8 /* ViewController.swift in Sources */,
 				74A86BAA2065163200A83BF8 /* AppDelegate.swift in Sources */,
 			);
@@ -278,7 +282,7 @@
 				DEVELOPMENT_TEAM = SGCF7SN3QK;
 				INFOPLIST_FILE = "Plain Ol' Notes/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "net.AliasLab.Plain-Ol--Notes";
+				PRODUCT_BUNDLE_IDENTIFIER = net.AliasLab.notes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -293,7 +297,7 @@
 				DEVELOPMENT_TEAM = SGCF7SN3QK;
 				INFOPLIST_FILE = "Plain Ol' Notes/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "net.AliasLab.Plain-Ol--Notes";
+				PRODUCT_BUNDLE_IDENTIFIER = net.AliasLab.notes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
