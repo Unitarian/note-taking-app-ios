@@ -16,7 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		74A86BA62065163200A83BF8 /* Plain Ol' Notes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Plain Ol' Notes.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		74A86BA62065163200A83BF8 /* Notes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Notes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74A86BA92065163200A83BF8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		74A86BAB2065163200A83BF8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		74A86BAE2065163200A83BF8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -40,7 +40,7 @@
 		74A86B9D2065163200A83BF8 = {
 			isa = PBXGroup;
 			children = (
-				74A86BA82065163200A83BF8 /* Plain Ol' Notes */,
+				74A86BA82065163200A83BF8 /* Notes */,
 				74A86BA72065163200A83BF8 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -48,12 +48,12 @@
 		74A86BA72065163200A83BF8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				74A86BA62065163200A83BF8 /* Plain Ol' Notes.app */,
+				74A86BA62065163200A83BF8 /* Notes.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		74A86BA82065163200A83BF8 /* Plain Ol' Notes */ = {
+		74A86BA82065163200A83BF8 /* Notes */ = {
 			isa = PBXGroup;
 			children = (
 				74A86BA92065163200A83BF8 /* AppDelegate.swift */,
@@ -64,15 +64,15 @@
 				74A86BB22065163200A83BF8 /* LaunchScreen.storyboard */,
 				74A86BB52065163200A83BF8 /* Info.plist */,
 			);
-			path = "Plain Ol' Notes";
+			path = Notes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		74A86BA52065163200A83BF8 /* Plain Ol' Notes */ = {
+		74A86BA52065163200A83BF8 /* Notes */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 74A86BB82065163200A83BF8 /* Build configuration list for PBXNativeTarget "Plain Ol' Notes" */;
+			buildConfigurationList = 74A86BB82065163200A83BF8 /* Build configuration list for PBXNativeTarget "Notes" */;
 			buildPhases = (
 				74A86BA22065163200A83BF8 /* Sources */,
 				74A86BA32065163200A83BF8 /* Frameworks */,
@@ -82,9 +82,9 @@
 			);
 			dependencies = (
 			);
-			name = "Plain Ol' Notes";
+			name = Notes;
 			productName = "Plain Ol' Notes";
-			productReference = 74A86BA62065163200A83BF8 /* Plain Ol' Notes.app */;
+			productReference = 74A86BA62065163200A83BF8 /* Notes.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -103,7 +103,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 74A86BA12065163200A83BF8 /* Build configuration list for PBXProject "Plain Ol' Notes" */;
+			buildConfigurationList = 74A86BA12065163200A83BF8 /* Build configuration list for PBXProject "Notes" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -116,7 +116,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				74A86BA52065163200A83BF8 /* Plain Ol' Notes */,
+				74A86BA52065163200A83BF8 /* Notes */,
 			);
 		};
 /* End PBXProject section */
@@ -280,7 +280,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SGCF7SN3QK;
-				INFOPLIST_FILE = "Plain Ol' Notes/Info.plist";
+				INFOPLIST_FILE = Notes/info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.AliasLab.notes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -295,7 +295,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SGCF7SN3QK;
-				INFOPLIST_FILE = "Plain Ol' Notes/Info.plist";
+				INFOPLIST_FILE = Notes/info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.AliasLab.notes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -307,7 +307,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		74A86BA12065163200A83BF8 /* Build configuration list for PBXProject "Plain Ol' Notes" */ = {
+		74A86BA12065163200A83BF8 /* Build configuration list for PBXProject "Notes" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				74A86BB62065163200A83BF8 /* Debug */,
@@ -316,7 +316,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		74A86BB82065163200A83BF8 /* Build configuration list for PBXNativeTarget "Plain Ol' Notes" */ = {
+		74A86BB82065163200A83BF8 /* Build configuration list for PBXNativeTarget "Notes" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				74A86BB92065163200A83BF8 /* Debug */,

@@ -13,17 +13,26 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     // MARK: Data Values
     @IBOutlet weak var table: UITableView!
+    
+    let searchController = UISearchController(searchResultsController: nil)
+
     var fileUrl : URL!
     var data : [String] = []
-    var selectedRow : Int = -1
+    var filteredData : [String] = []
+
+    var selectedDataRow : Int = -1
     var newRowText : String = ""
-    
+
     // MARK: Overloads
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        
+        // set tableview deleage and datasource to self
         table.dataSource = self
         table.delegate = self
+        
+        // setup title
         self.title = "Notes"
         self.navigationController?.navigationBar.prefersLargeTitles = true;
         self.navigationItem.largeTitleDisplayMode = .always
@@ -32,29 +41,36 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNote))
         self.navigationItem.rightBarButtonItem = addButton
         
+        // edit button
         self.navigationItem.leftBarButtonItem = editButtonItem
         
+        // set file url and load saved notes
         let baseURL = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
-        
         fileUrl = baseURL.appendingPathComponent("note.txt")
-        
-        
         load()
+        
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search notes"
+        navigationItem.searchController = data.count > 7 ? searchController : nil
+        definesPresentationContext = true
     }
     
     override func viewWillAppear(_ animated: Bool)
     {
         super.viewWillAppear(animated)
-        if selectedRow == -1
+        searchController.isActive = false
+        if selectedDataRow == -1
         {
             return
         }
-        data[selectedRow] = newRowText
+        
+        data[selectedDataRow] = newRowText
         if newRowText == ""
         {
-            data.remove(at: selectedRow)
+            data.remove(at: selectedDataRow)
         }
-        table.reloadData()
+        
         save()
     }
     
@@ -68,9 +84,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
         let detailViewControll = segue.destination as! DetailViewController
-        selectedRow = table.indexPathForSelectedRow!.row
+        
+        selectedDataRow = table.indexPathForSelectedRow!.row
+        if isFiltering()
+        {
+            let item = filteredData[selectedDataRow]
+            selectedDataRow = data.index(of: item)!
+        }
         detailViewControll.masterView = self
-        detailViewControll.setText(t: data[selectedRow])
+        
+        detailViewControll.setText(t: data[selectedDataRow])
     }
     
     override func didReceiveMemoryWarning()
@@ -96,6 +119,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func save()
     {
+        navigationItem.searchController = data.count > 10 ? searchController : nil
+        
 //        UserDefaults.standard.setValue(data, forKey: "notes")
         let a = NSArray(array: data)
         do
@@ -122,13 +147,27 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
+        if isFiltering()
+        {
+            return filteredData.count
+        }
+        
         return data.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         let cell : UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell")!
-        cell.textLabel?.text = data[indexPath.row]
+        var text = ""
+        if isFiltering()
+        {
+            text = filteredData[indexPath.row]
+        }
+        else
+        {
+            text = data[indexPath.row]
+        }
+        cell.textLabel?.text = text
         return cell
     }
 
@@ -154,5 +193,32 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         table.reloadData()
     }
 
+    func isFiltering() -> Bool
+    {
+        return searchController.isActive && !searchBarIsEmpty()
+    }
+    
+    func searchBarIsEmpty() -> Bool
+    {
+        return searchController.searchBar.text?.isEmpty ?? true
+    }
+    
+    func filterContentForSearchText(_ searchText: String, scope: String = "All")
+    {
+        filteredData = data.filter({ (value) -> Bool in
+            return value.lowercased().contains(searchText.lowercased())
+        })
+        
+        table.reloadData()
+    }
+}
+
+extension ViewController: UISearchResultsUpdating
+{
+    // MARK: - UISearchResultsUpdating Delegate
+    func updateSearchResults(for searchController: UISearchController)
+    {
+        filterContentForSearchText(searchController.searchBar.text!)
+    }
 }
 

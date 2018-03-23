@@ -13,13 +13,13 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Plain_Ol__Notes" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Notes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FLq-O3-gAz">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="llc-0z-JG3">
@@ -35,10 +35,10 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="FLq-O3-gAz" secondAttribute="trailing" id="3qE-8h-8EG"/>
-                            <constraint firstItem="FLq-O3-gAz" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="I8e-ji-j90"/>
-                            <constraint firstItem="FLq-O3-gAz" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="PsN-QC-awm"/>
-                            <constraint firstItem="FLq-O3-gAz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="RYs-DQ-ZiN"/>
+                            <constraint firstAttribute="trailing" secondItem="FLq-O3-gAz" secondAttribute="trailing" id="NFO-Od-PE4"/>
+                            <constraint firstItem="FLq-O3-gAz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="YBI-uW-4Y3"/>
+                            <constraint firstItem="FLq-O3-gAz" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="feo-7H-sze"/>
+                            <constraint firstItem="FLq-O3-gAz" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="obT-bP-dri"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -50,12 +50,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="953" y="132"/>
+            <point key="canvasLocation" x="952.79999999999995" y="131.78410794602701"/>
         </scene>
         <!--Note-->
         <scene sceneID="8GZ-ya-5Wz">
             <objects>
-                <viewController title="Note" id="yi2-0b-ioi" customClass="DetailViewController" customModule="Plain_Ol__Notes" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Note" id="yi2-0b-ioi" customClass="DetailViewController" customModule="Notes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pmx-vp-zuP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
