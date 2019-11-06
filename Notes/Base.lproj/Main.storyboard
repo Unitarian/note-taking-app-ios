@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vn4-Pm-siH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1CM-QF-JKS">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Notes-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Notes" customModuleProvider="target" sceneMemberID="viewController">
@@ -42,15 +42,15 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="sKV-5e-d0b"/>
+                    <navigationItem key="navigationItem" title="Notes" id="vgW-Qd-khw"/>
                     <connections>
                         <outlet property="table" destination="FLq-O3-gAz" id="73N-Yx-Sut"/>
-                        <segue destination="yi2-0b-ioi" kind="show" identifier="detail" id="MAv-qk-vSc"/>
+                        <segue destination="yi2-0b-ioi" kind="show" identifier="detail" id="GFa-n6-IlF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="952.79999999999995" y="131.78410794602701"/>
+            <point key="canvasLocation" x="2415.1999999999998" y="71.514242878560722"/>
         </scene>
         <!--Note-->
         <scene sceneID="8GZ-ya-5Wz">
@@ -77,31 +77,32 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="lpz-ZA-dN7"/>
                     </view>
+                    <navigationItem key="navigationItem" id="5GP-Do-TKn"/>
                     <connections>
                         <outlet property="textView" destination="mHz-a4-Wlp" id="7Bv-3x-1D3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uAw-bL-Bb3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1752.8" y="130.88455772113943"/>
+            <point key="canvasLocation" x="3119" y="72"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="4dH-bw-q1R">
+        <scene sceneID="tTi-np-fuc">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vn4-Pm-siH" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1CM-QF-JKS" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hfZ-Bn-xwN">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="mph-Md-FeL">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="WFh-je-p83"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="66V-LJ-RhW"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="nTR-qJ-qxp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QGi-ih-Fl2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136" y="132.23388305847078"/>
+            <point key="canvasLocation" x="1593" y="72"/>
         </scene>
     </scenes>
 </document>

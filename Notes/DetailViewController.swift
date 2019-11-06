@@ -43,8 +43,11 @@ class DetailViewController: UIViewController
     override func viewWillDisappear(_ animated: Bool)
     {
         super.viewWillDisappear(animated)
-        masterView.newRowText = textView.text
-        textView.resignFirstResponder()
+        if masterView != nil && textView != nil
+        {
+            masterView.newRowText = textView.text
+            textView.resignFirstResponder()
+        }
     }
 
     override func didReceiveMemoryWarning()
